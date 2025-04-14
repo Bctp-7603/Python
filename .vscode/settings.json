@@ -3,6 +3,7 @@
         "string.h": "c",
         "stdlib.h": "c",
         "cmath": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "stdio.h": "c"
     }
 }
