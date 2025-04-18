@@ -1,8 +1,4 @@
-// merge sort, heap sort, quick sort 등이나 내장 정렬 함수 등도 전부 사용할 수 없음.
-/*
-메모리 초과
-참고 : https://www.acmicpc.net/board/view/152450
-*/
+// 2751번 수 정렬하기 2
 
 #include <stdio.h>
 #include <stdlib.h>
