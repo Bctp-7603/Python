@@ -1,4 +1,3 @@
-// 틀렸음. 다시 해보기 !! 필수 !!
 #include <stdio.h>
 
 #define MAX_STAIRS 300
@@ -12,10 +11,20 @@ int stair(int stairs[], int n) {
 
     dp[0] = 0;
     dp[1] = stairs[1];
-    dp[2] = stairs[2];
+    dp[2] = stairs[1] + stairs[2];
 
     for (int i = 3; i <= n; i++) {
-        dp[i] = max(dp[i - 1], dp[i - 2] + stairs[i]);
+        // dp[i] = max(dp[i - 1], dp[i - 2] + stairs[i]);
+        /*
+        dp[i] = (dp[i - 2] > dp[i - 3] + dp[i - 1]) 
+                    ? dp[i - 2] + dp[i]
+                    : dp[i - 3] + dp[i - 1] + dp[i];
+        */
+        dp[i] = max(
+            dp[i - 2] + stairs[i],
+            dp[i - 3] + stairs[i - 1] + stairs[i]
+        );
+        // printf("dp[%d] = %d\n", i, dp[i]);
     }
 
     return dp[n];
@@ -26,6 +35,8 @@ int main() {
     scanf("%d", &n);
 
     int stairs[n + 1];
+
+    stairs[0] = 0;
 
     for(int i = 1; i <= n; i++) {
         scanf("%d", &stairs[i]);
