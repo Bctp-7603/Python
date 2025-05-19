@@ -1,7 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    printf("?");
+    int n;
+
+    scanf("%d", &n);
+
+    
 
     return 0;
 }
